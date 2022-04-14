@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/index.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    </head>
+
+    <body>
+        
+        <div class="container">
+             <div class="banner">
+                 <div class="img">
+                    <img id="img" onclick="changeImage()" src="images/h1.png" width="100%" >
+                </div>
+                <div class="dieuhuong">
+                    <i class="fa fa-chevron-circle-left" onclick="prev()"></i>
+                    <i class="fa fa-chevron-circle-right" onclick="next()"></i>
+                </div> 
+            </div>
+        
+            <nav> 
+                <ul>
+                    <li><a href="tc.html" target="page">Trang chủ</a></li> 
+                    <li><a href="bai1.html" target="page">PT bậc hai</a></li>           
+                    
+                    <li><a href="bai2.html" target="page" >Slideshow</a></li>
+                    <li><a href="bai3.html"  target="page">Giỏ Hàng</a> </li>
+                    <li><a href="bai4.html" target="page">Đăng ký</a></li>
+
+                </ul>
+                
+            </nav>
+           
+             <iframe name='page' width="100%" height="100%">  
+                  <div class="tonghop"></div>
+                </iframe> 
+            <footer>
+                <p class="ft">Thực hiện bởi sinh viên: Phạm Thanh Thương</p>
+            </footer>
+        </div>
+        
+    </body>
+</html>
+<script src="js/cart.js"></script><script>
+    var index=1;
+    changeImage=function(){
+    var imgs =[ "images/b1.png", "images/b2.jpg", "images/b3.png", "images/b4.jpg"]
+    document.getElementById('img').src= imgs[index];
+    index++;
+        if(index==4){
+            index=0;
+        }
+}
+setInterval(changeImage,1000);
+</script>
+</body>
+
+</html>
+<script>
+var arr_img=[
+
+    "images/b1.png",
+    "images/b2.jpg",
+    "images/b3.png",
+    "images/b4.jpg",
+
+    
+]
+var index=1;
+function next(){
+index++;
+if(index>=arr_img.length)index=1;
+document.getElementById('hinh');
+hinh.src=arr_imgs[index];
+document.getElementById('dem').innerHTML =index+"/" + arr_img.length;
+}
+function prev(){
+index--;
+if(index<1) index= arr_img.length -1;
+document.getElementById('img').src=arr_img[index];
+document.getElementById('dem').innerHTML =index+"/" + arr_img.length;
+}
+</script> 
